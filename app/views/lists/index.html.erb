@@ -1,0 +1,15 @@
+<h1>Lists</h1>
+
+<% if @lists.empty? %>
+<p>No lists yet!</p>
+<%= link_to "Create a list", new_list_path %>
+<% else %>
+  <ul class="list-group">
+    <% @lists.each do |list| %>
+    <li><%= link_to list.name, list %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<hr>
+<%= link_to "Add a new list", new_list_path %>
